@@ -11,10 +11,10 @@ RUN apt update \
 COPY ./files/php.ini /etc/php/7.0/mods-available/ua.ini
 COPY ./files/supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
 COPY ./files/supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
-COPY ./files/mysqld-foreground.sh /usr/local/bin/mysqld-foreground
+COPY ./files/mysqld-foreground /usr/local/bin/mysqld-foreground
 COPY ./files/run.sh /run.sh
 COPY ./files/my.cnf /etc/mysql/conf.d/ua.cnf
-COPY ./files/create_mysql_user /usr/local/bin/create_mysql_user.sh
+COPY ./files/create_mysql_user.sh /usr/local/bin/create_mysql_user.sh
 
 # Install robo
 RUN wget -O /usr/local/bin/robo http://robo.li/robo.phar && chmod +x /usr/local/bin/robo \
